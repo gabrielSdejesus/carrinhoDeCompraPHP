@@ -1,0 +1,66 @@
+.row {
+    margin: 0px;
+}
+
+html, body {
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+body{
+    justify-content: space-between;
+}
+h1 {
+    color: aliceblue;
+}
+
+.div-nav{
+    display: flex;
+    padding-left: 1%;
+}
+
+.div-nav h1 {
+    margin-left: 50px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
+footer, nav {
+    width: inherit;
+}
+
+.formEdit{
+    color: white;
+    display: flex;
+    justify-content: center;
+    background-color: #343a40;
+    border-radius: 20px;
+    padding-bottom: 1%;
+    min-width: 320px;
+}
+
+.offcanvas.show:not(.hiding), .offcanvas.showing, .offcanvas.hiding {
+    background-color: darkgray;
+    width: 300px;
+}
+
+
+.offcanvas-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.offcanvas-body a {
+    width: 50%;
+    margin: 10px;
+}
