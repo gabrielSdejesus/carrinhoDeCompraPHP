@@ -2,34 +2,34 @@
     <body>
     <h1 style="color: black; font-family: 'Calibri'">Adicionar um novo produto</h1>
     <section>
-        <form class="row g-3 formEdit" action="save-produto.php" method="POST">
+        <form class="row g-3 formEdit" action="operationsProduto.php" method="POST">
             <input type="hidden" name="acao" value="cadastrar">
-            <div style="margin-left:2%; width: 300px">
+            <div style="width: 300px; margin-top: 10px">
                 <div class="col-md-12">
                     <label class="form-label">Nome</label>
-                    <input type="text" class="form-control" name="nome" required>
+                    <input type="text" class="form-control" name="nome" placeholder="Sabão em pó" required>
                 </div>
                 <div class="col-md-12">
                     <label class="form-label">Valor</label>
-                    <input type="number" class="form-control" name="valor" required>
+                    <input type="number" class="form-control" name="valor" placeholder="50" required>
                 </div>
                 <div class="col-12">
                     <label class="form-label">Descricao</label>
-                    <textarea class="form-control" name="descricao" rows="3"></textarea>
+                    <textarea class="form-control" name="descricao" rows="3" placeholder="Lavar roupas"></textarea>
                 </div>
                 <div class="col-12">
                     <label class="form-label">Peso</label>
-                    <input type="number" class="form-control" name="peso" required>
+                    <input type="number" class="form-control" name="peso" placeholder="75" required>
                 </div>
                 <div class="col-md-12">
                     <label class="form-label">Quantidade</label>
-                    <input type="number" class="form-control" name="quantidade" required>
+                    <input type="number" class="form-control" name="quantidade"  placeholder="10" required>
                 </div>
                 <div class="col-md-12">
                     <label class="form-label">Codigo</label>
-                    <input type="number" class="form-control" name="codigo" required>
+                    <input type="number" class="form-control" name="codigo" placeholder="95712358" required>
                 </div>
-                <div class="form-check">
+                <div class="form-check" style="margin-top: 10px">
                     <label class="form-check-label" for="gridCheck">
                         Disponibilidade
                     </label>

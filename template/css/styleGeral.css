@@ -43,7 +43,7 @@ footer, nav {
     display: flex;
     justify-content: center;
     background-color: #343a40;
-    border-radius: 20px;
+    border-radius: 5px;
     padding-bottom: 1%;
     min-width: 320px;
 }
@@ -63,4 +63,11 @@ footer, nav {
 .offcanvas-body a {
     width: 50%;
     margin: 10px;
+}
+
+.formLogin {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    margin: auto;
 }

@@ -29,6 +29,19 @@ class produtoRepository
         return $object_array;
     }
 
+    public static function findById($id){
+        $sql = "SELECT * FROM PRODUTO p WHERE p.id = $id";
+        $result = (new produtoRepository)->databaseOperation($sql);
+
+        $object = null;
+        while($record = $result->fetch_assoc()) {
+            $object = produto::instantiateConsult($record);
+        }
+
+        $result->free();
+        return $object;
+    }
+
 
     public static function addProduct(produto $novoProduto){
         $values = $novoProduto->getValuesAtributes();
@@ -47,6 +60,30 @@ class produtoRepository
         $sql .= "')";
         (new produtoRepository)->databaseOperation($sql);
         return self::$database->insert_id;
+    }
+
+    public static function editProduct(produto $produtoEditado){
+        $values = $produtoEditado->getValuesAtributes();
+        $attributes = $produtoEditado->getAttributes();
+        $id = $values[0];
+
+        array_shift($values);
+        array_shift($attributes);
+
+        $setPairs = array();
+        foreach ($attributes as $index => $name) {
+            $value = $values[$index];
+            $setPairs[] = "$name = '$value'";
+        }
+        $setList = implode(', ', $setPairs);
+        $sql = "UPDATE PRODUTO SET $setList WHERE id = $id";
+        (new produtoRepository)->databaseOperation($sql);
+        return $id;
+    }
+
+    public static function deleteProduto($id){
+        $sql = "DELETE FROM PRODUTO p WHERE p.id = $id";
+        (new produtoRepository)->databaseOperation($sql);
     }
 
     static protected function set_database() {
