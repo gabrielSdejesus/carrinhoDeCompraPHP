@@ -1,4 +1,6 @@
 <?php require_once 'header.php' ?>
+<?php require_once '../security/session.php';
+session::startSession(); ?>
 <?php
     require_once '../repository/produtoRepository.php';
     $produtos = produtoRepository::consult();
